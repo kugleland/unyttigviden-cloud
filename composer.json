@@ -12,15 +12,16 @@
         "php": "^8.2",
         "calebporzio/sushi": "^2.5",
         "filament/filament": "^3.3",
-        "laravel-interaction/bookmark": "^3.3",
-        "laravel-interaction/vote": "^3.3",
+        "laravel-interaction/bookmark": "^3.4",
+        "laravel-interaction/vote": "^3.4",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "livewire/flux": "^2.1.1",
         "livewire/volt": "^1.7.0",
         "prism-php/prism": "^0.59.0",
-        "spatie/laravel-query-builder": "^6.0"
+        "spatie/laravel-query-builder": "^6.0",
+        "tangodev-it/filament-emoji-picker": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

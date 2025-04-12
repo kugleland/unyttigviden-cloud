@@ -8,7 +8,7 @@ return [
     'load_migrations' => true,
     'uuids' => false,
     'models' => [
-        'user' => \App\User::class,
+        'user' => \App\Models\User::class,
         'pivot' => Bookmark::class,
     ],
     'table_names' => [

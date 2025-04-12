@@ -9,11 +9,16 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use LaravelInteraction\Vote\Concerns\Voter;
+use LaravelInteraction\Bookmark\Concerns\Bookmarker;
 
 class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory;
+    use Notifiable;
+    use Voter;
+    use Bookmarker;
 
     /**
      * The attributes that are mass assignable.
@@ -65,5 +70,4 @@ class User extends Authenticatable implements FilamentUser
     {
         return str_contains($this->email, 'janus.helkjaer@gmail.com');
     }
-    
 }

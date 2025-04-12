@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
-// use LaravelInteraction\Vote\Concerns\Voteable;
-// use LaravelInteraction\Bookmark\Concerns\Bookmarkable;
+use LaravelInteraction\Vote\Concerns\Voteable;
+use LaravelInteraction\Bookmark\Concerns\Bookmarkable;
 
 class Fact extends Model
 {
     use HasFactory;
-    // use Voteable;
-    // use Bookmarkable;
+    use Voteable;
+    use Bookmarkable;
 
     protected $guarded = [];
 

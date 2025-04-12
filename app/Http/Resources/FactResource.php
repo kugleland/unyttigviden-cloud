@@ -19,9 +19,7 @@ class FactResource extends JsonResource
     {
 
         $user = auth('sanctum')->user();
-        $locale = (app()->getLocale()) ? app()->getLocale() : 'da';
-
-        #dd($this);
+        
         $factModel = Fact::find($this->id);
         return [
             'id' => $this->id,
