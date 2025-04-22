@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -29,6 +30,8 @@ class AuthController extends Controller
                 'message' => 'The provided credentials are incorrect.',
             ], 422);
         }
+
+        $user->profile_image_url = $user->gravatar;
 
         return response()->json([
             'message' => 'Login successful',
@@ -54,7 +57,7 @@ class AuthController extends Controller
 
         event(new Registered($user));
 
-
+        $user->profile_image_url = $user->gravatar;
         return response()->json([
             'message' => 'Register successful',
             'token' => $user->createToken($request->device_id)->plainTextToken,

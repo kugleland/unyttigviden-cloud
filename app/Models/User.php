@@ -11,7 +11,8 @@ use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use LaravelInteraction\Vote\Concerns\Voter;
 use LaravelInteraction\Bookmark\Concerns\Bookmarker;
-
+use Laravel\Sanctum\HasApiTokens;
+use App\Traits\HasGravatar;
 class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -19,7 +20,8 @@ class User extends Authenticatable implements FilamentUser
     use Notifiable;
     use Voter;
     use Bookmarker;
-
+    use HasApiTokens;
+    use HasGravatar;
     /**
      * The attributes that are mass assignable.
      *

@@ -29,6 +29,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('/facts/{fact}', [FactController::class, 'show'])->name('api.facts.show');
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('api.categories.index');
+    Route::get('/categories/all', [CategoryController::class, 'all'])->name('api.categories.all');
     Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('api.categories.show');
 
     Route::get('/daily-fact', [FactController::class, 'dailyFact'])->name('api.daily-fact');
@@ -45,7 +46,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::get('/user', function (Request $request) {
             $user = $request->user();
-            $user->profile_image_url = $user->profile_photo_url;
+            $user->profile_image_url = $user->gravatar;
             return $user;
         });
 

@@ -28,8 +28,9 @@ class BookmarkController extends Controller
         );
 
 
+
         return response()->json([
-            'data' => $facts,
+            'data' => FactResource::collection($facts),
             'status' => true,
             'message' => 'Facts found successfully'
         ]);
